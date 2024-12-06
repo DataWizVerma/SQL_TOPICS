@@ -1,0 +1,26 @@
+SQL Practice Questions
+-----------------------------------------------------------------
+IS NULL | IS NOT NULL | IFNULL()
+1) Display all the details of the employees whose emp_no is more than
+1020 and salary is not available.
+2) Retrieve those employee whose last_name is null.
+3) Retrieve emp_no, first_name, salary and department of those
+employees who works in any department.
+4) Get emp_no, first_name , salary and the annual salary of the employees
+as column name “annual salary”. If salary is not available, then display
+“NA” in result set.
+5) Write a query to retrieve those employees who is Female and who
+doesn’t belong to any department.
+---------------------------------------------------------------
+
+
+SQL Practice Answers
+IS NULL | IS NOT NULL |IFNULL()
+1) SELECT * FROM employee WHERE emp_no > 1020 AND salary IS NULL;
+2) SELECT * FROM employee WHERE last_name IS NULL;
+3) SELECT emp_no, first_name, salary,department FROM employee
+WHERE department IS NOT NULL;
+4) SELECT emp_no, first_name, salary, IFNULL(salary*12,'NA') AS
+annual_salary FROM employee;
+5) SELECT * FROM employee WHERE gender='F' AND department IS
+NULL;
