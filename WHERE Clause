@@ -1,0 +1,91 @@
+Here is the content formatted in a GitHub README style:
+
+---
+
+# SQL Practice Queries
+
+This repository contains practice SQL queries for common tasks related to an `employees` table. Below are the details of the table structure and queries.
+
+## Employees Table
+- **Table Creation**: [Employees Table Schema](https://docs.google.com/document/d/1mbK5aIyNru0WtG0e1nGPZVEVaC6xWf6-0kzhs4Wr1IQ/edit?usp=sharing)
+- **Insert Records**: [Insert Records into Employees Table](https://docs.google.com/document/d/1kIBs9w90Y-r0iU2LqlqsuhN9VAXlGJqpXnbK-NXaLV4/edit?usp=sharing)
+
+---
+
+## Practice SQL Queries
+
+### 1. Display all records of employees whose `joining_date` is after 20 March 2022.
+```sql
+SELECT * 
+FROM employees 
+WHERE joining_date > '2022-03-20';
+```
+
+### 2. Display `emp_no`, `first_name`, `last_name`, and `department` of employees whose department is 'Finance'.
+```sql
+SELECT emp_no, first_name, last_name, department 
+FROM employees 
+WHERE department = 'Finance';
+```
+
+### 3. Display `emp_no`, `salary`, and `department` of employees whose salary is below 35,000.
+```sql
+SELECT emp_no, salary, department 
+FROM employees 
+WHERE salary < 35000;
+```
+
+### 4. Display all records of employees whose `birth_date` is on or after 24 January 1998.
+```sql
+SELECT * 
+FROM employees 
+WHERE birth_date >= '1998-01-24';
+```
+
+### 5. Display `emp_no`, `first_name`, and `department` of employees whose department is not 'IT'.
+```sql
+SELECT emp_no, first_name, department 
+FROM employees 
+WHERE department != 'IT';
+```
+
+### 6. Display all records of employees whose `emp_no` is 1010 or below.
+```sql
+SELECT * 
+FROM employees 
+WHERE emp_no <= 1010;
+```
+
+### 7. Display unique `first_name` of employees whose gender is 'Male'.
+```sql
+SELECT DISTINCT first_name 
+FROM employees 
+WHERE gender = 'M';
+```
+
+### 8. Display `emp_no`, `first_name`, `salary`, and add 10,000 to the salary of employees whose salary is below 25,000. Display the updated salary as `final_salary`.
+```sql
+SELECT emp_no, first_name, salary, salary + 10000 AS final_salary 
+FROM employees 
+WHERE salary < 25000;
+```
+
+### 9. Display `emp_no` and the full name (as `full_name`) of employees whose `emp_no` is more than 1015.
+```sql
+SELECT emp_no, CONCAT(first_name, ' ', last_name) AS full_name 
+FROM employees 
+WHERE emp_no > 1015;
+```
+
+---
+
+## Usage
+These queries are written for a hypothetical `employees` table and are meant for practice purposes. You can create the table and populate it using the provided schema and data.
+
+---
+
+Feel free to contribute or raise an issue if you find any corrections or enhancements. 😊
+
+--- 
+
+Let me know if you'd like any modifications!
