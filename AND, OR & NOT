@@ -1,0 +1,38 @@
+SQL Practice Questions
+1) Write a query to display all the records of the employee who either
+belong to ‘HR’ department or ‘Marketing’ department.
+2) Write a query to get the emp_no, first_name and salary of the
+employee whose emp_no is more than 1010 and salary is also more
+than 40000.
+3) Write a query to display all the records of the employee whose
+gender is Female and they don’t belong to ‘IT’ department.
+4) Write a query to get emp_no, department, salary and joining_date of
+the employee who either joined the company after 1 April 2020 or
+who has salary below 33000.
+5) Write a query to get all the records of the employee whose gender is
+Male and their department should either be ‘Business Development’
+or ‘Marketing’ or ‘Finance’.
+6) Write a query to get emp_no, first_name and birth_date of the
+employee whose emp_no is below 1020 and birth_date should not
+be more than 9 March 1999.
+7) Write a query to display all the records of the employee whose first
+name is ‘David’ or ‘Mary’ and last name should not be ‘Gill’
+-----------------------------------------------------------------------------------
+Answers:
+SQL Practice Answers
+
+1) SELECT * FROM employees WHERE department = 'HR' OR department =
+'Marketing’;
+2) SELECT emp_no, first_name, salary FROM employees WHERE emp_no >
+1010 AND salary > 40000;
+3) SELECT * FROM employees WHERE gender = 'F' AND NOT department =
+'IT';
+4) SELECT emp_no, department, salary, joining_date FROM employees
+WHERE joining_date > '2020-04-01' OR salary < 33000;
+5) SELECT * FROM employees WHERE gender = 'M' AND (department =
+'Business Development' OR department ='Marketing' OR department
+='Finance’);
+6) SELECT emp_no, first_name, birth_date FROM employees WHERE
+emp_no < 1020 AND birth_date < '1999-03-09’;
+7) SELECT * FROM employees WHERE (first_name = 'David' OR first_name
+='Mary') AND NOT last_name = 'Gill' ;
