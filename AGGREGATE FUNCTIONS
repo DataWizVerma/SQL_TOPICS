@@ -1,0 +1,43 @@
+select * from employees;
+-- 1) Find the number of male employee as total_male from "employee"
+-- table.
+select count(*) as total_male from employees where gender='M';
+
+-- 2) Write a SQL query to find the number of employees whose first name
+-- starts with the letter ‘J’ from "employee" table.
+select count(*) from employees where first_name like 'j%';
+
+
+-- 3) Find the total salary of employees whose employee numbers
+-- (emp_no) are between 1010 and 1020 from "employee" table..
+select sum(salary) from employees where emp_no between 1010 and 1020
+
+-- 4) Write a SQL query to calculate the total annual salary of all
+-- employees as annual_salary in the HR department from "employee"
+-- table.
+select sum(salary*12) as anunual_salary from employees where department='HR'
+
+-- 5) Find the average salary of all employees as avg_salary from
+-- "employee" table.
+select avg(salary) as avg_salary from employees;
+
+-- 6) Find the average salary of employees working in the IT department
+-- from "employee" table.
+select avg(salary) from employees where department='IT'
+
+
+-- 7) Write a SQL query to find the earliest joining date as
+-- min_joining_date among all employees in the "employee" table.
+select min(joining_date) as min_joining_date from employees
+
+-- 8) Find the minimum salary of employees working in the Finance
+-- department as min_salary from "employee" table.
+select min(salary) as min_salary from employees where department='Finance'
+
+-- 9) Find the maximum birth date among all employees from "employee"
+-- table as max_dob.
+select max(birth_date) as max_dob from employees
+
+-- 10) What is the highest employee number (emp_no) in the "employee"
+-- table
+select max(emp_no) from employees
