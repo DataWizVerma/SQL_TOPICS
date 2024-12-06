@@ -1,0 +1,36 @@
+-----------------------------------------------------------------------
+SQL Practice Questions – LIMIT & OFFSET
+-----------------------------------------------------------------------
+1) Return all rows from the "employee" table, but only show the first 10
+rows.
+2) Return the next 10 rows from the " employee " table (i.e. rows with
+emp_no 1011-1020):
+3) Fetch emp_no, first name ,last name , joining date of 6 employees
+who recently joined the company
+4) Retrieve all the details of the 2 youngest employees from the
+“employee” table.
+5) Retrieve all the details of the 3 eldest male employees from the
+“employee” table.
+6) Retrieve emp_no, first name and salary of 3 highest paid employees
+from the “employee” table.
+7) Retrieve all the details of 3 lowest paid employees who belongs to IT
+department from the “employee” table.
+8) Retrieve the details of the first three employees in the "employee"
+table whose first name starts with the letter "J", sorted in
+alphabetical order by their first names.
+-----------------------------------------------------------------------
+SQL Practice Answers – LIMIT & OFFSET
+-----------------------------------------------------------------------
+1) SELECT * FROM emp LIMIT 10;
+2) SELECT * FROM emp LIMIT 10 OFFSET 10;
+3) SELECT emp_no, first_name, last_name, joining_date FROM
+emp ORDER BY joining_date DESC LIMIT 6;
+4) SELECT * FROM emp ORDER BY birth_date DESC LIMIT 2;
+5) SELECT * FROM emp WHERE gender='M' ORDER BY
+birth_date LIMIT 3;
+6) SELECT emp_no, first_name, salary FROM emp WHERE salary IS NOT
+NULL ORDER BY salary DESC LIMIT 3;
+7) SELECT * FROM emp WHERE salary IS NOT NULL AND
+department='IT' ORDER BY salary LIMIT 3;
+8) SELECT * FROM emp WHERE first_name LIKE 'J%’ ORDER BY
+first_name LIMIT 3 ;
