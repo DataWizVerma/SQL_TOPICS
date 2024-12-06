@@ -1,0 +1,32 @@
+SQL Practice Questions –ORDER BY
+----------------------------------------------------------------------
+
+1) Write a SQL query to retrieve all the records with joining_date sorted
+in descending order.
+2) Write an SQL query to retrieve all records from employee table and
+sort them by last name in ascending order.
+3) Retrieve emp_no, first_name, gender and salary from the employee
+table whose salary is not NULL and sort them by gender in ascending
+order, then by first name in ascending order.
+4) Get all those employee from the employee table whose emp_no is
+between 1011 and 1020 and sort them by emp_no in descending
+order.
+5) Write a SQL query to retrieve unique First name and sort First Name
+in ascending order.
+6) Retrieve emp_no, first_name, department and birth_date from the
+employee table whose department contains only two character and
+sort them by department in ascending order then by birth_date in
+descending order.
+--------------------------------------------------------------------
+SQL Practice Answers – ORDER BY
+--------------------------------------------------------------------
+1) SELECT * FROM employee ORDER BY joining_date DESC;
+2) SELECT * FROM employee ORDER BY last_name ASC;
+3) SELECT emp_no, first_name, gender, salary FROM employee WHERE
+salary IS NOT NULL ORDER BY gender , first_name;
+4) SELECT * FROM employee WHERE emp_no BETWEEN 1011 AND
+1020 ORDER BY emp_no DESC;
+5) SELECT DISTINCT first_name FROM employee ORDER BY first_name;
+6) SELECT emp_no, first_name, department, birth_date FROM emp
+WHERE department LIKE '__' ORDER BY department , birth_date
+DESC;
