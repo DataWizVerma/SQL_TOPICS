@@ -1,0 +1,57 @@
+------------------------------------------------------------------------------
+SQL Practice Questions
+------------------------------------------------------------------------------
+TOP | FETCH FIRST
+1) Return all rows from the "employee" table, but only show the first 10
+rows.
+2) Fetch emp_no, first name ,last name , joining date of 6 employees
+who recently joined the company
+3) Retrieve all the details of the 2 youngest employees from the
+“employee” table.
+4) Retrieve all the details of the 3 eldest male employees from the
+“employee” table.
+5) Retrieve emp_no, first name and salary of 3 highest paid employees
+from the “employee” table.
+6) Retrieve all the details of 3 lowest paid employees who belongs to IT
+department from the “employee” table.
+7) Retrieve the details of the first three employees in the "employee"
+table whose first name starts with the letter "J", sorted in
+alphabetical order by their first names.
+
+------------------------------------------------------------------------------
+SQL Practice Answers – FETCH FIRST
+------------------------------------------------------------------------------
+
+1) SELECT * FROM emp FETCH FIRST 10 ROWS ONLY;
+2) SELECT emp_no, first_name, last_name, joining_date FROM
+emp ORDER BY joining_date DESC FETCH FIRST 6 ROWS
+ONLY;
+3) SELECT * FROM emp ORDER BY birth_date DESC FETCH
+FIRST 2 ROWS ONLY;
+4) SELECT * FROM emp WHERE gender='M' ORDER BY
+birth_date FETCH FIRST 3 ROWS ONLY;
+5) SELECT emp_no, first_name, salary FROM emp WHERE
+salary IS NOT NULL ORDER BY salary DESC FETCH FIRST 3
+ROWS ONLY;
+6) SELECT * FROM emp WHERE salary IS NOT NULL AND
+department='IT' ORDER BY salary FETCH FIRST 3 ROWS
+ONLY;
+7) SELECT * FROM emp WHERE first_name LIKE 'J%’ ORDER BY
+first_name FETCH FIRST 3 ROWS ONLY ;
+------------------------------------------------------------------------------
+
+SQL Practice Answers – TOP
+
+------------------------------------------------------------------------------
+1) SELECT TOP 3 * FROM emp ;
+2) SELECT TOP 6 emp_no, first_name, last_name, joining_date
+FROM emp ORDER BY joining_date DESC ;
+3) SELECT TOP 2 * FROM emp ORDER BY birth_date DESC;
+4) SELECT TOP 3 * FROM emp WHERE gender='M' ORDER BY
+birth_date;
+5) SELECT TOP 3 emp_no, first_name, salary FROM emp
+WHERE salary IS NOT NULL ORDER BY salary DESC;
+6) SELECT TOP 3 * FROM emp WHERE salary IS NOT NULL AND
+department='IT' ORDER BY salary;
+7) SELECT TOP 3 * FROM emp WHERE first_name LIKE 'J%’
+ORDER BY first_name ;
