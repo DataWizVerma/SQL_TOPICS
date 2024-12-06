@@ -1,0 +1,86 @@
+-------------------------------------------------------------------------------------
+SQL Practice Questions – HAVING Clause
+-------------------------------------------------------------------------------------
+1) Write a SQL query to count the number of duplicate first name as
+duplicate_count in the employee table.
+2) Find the departments with more than 5 employees as
+total_employees from the employee table.
+3) Determine the department with an average salary greater than
+50000 as average_salary from the employee table.
+4) Determine the department with at least 3 employees earning a salary
+of 30000 or more total_employees from as the employee table.
+5) Find the departments with a maximum salary greater than 60000 as
+max_salary from the employee table.
+6) Find the department where the highest salary (as highest_salary) is
+at least twice the lowest salary (as lowest_salary) in the employee
+table.
+7) Determine the department with at least 5 employees (as
+total_employees) where the total salary expense (as
+total_salary_expense ) is greater than 100000 in the employee table.
+8) Determine the department where the average salary (as
+average_salary) is within the range of 20000 to 50000 (inclusive) in
+the employee table.
+9) Determine the departments with more than 4 employees (as
+total_employees) where the difference between the maximum and
+minimum salary is greater than 25000 (salary_difference) from the
+employee table.
+SQL Practice Answers – HAVING Clause
+SELECT first_name,
+COUNT(*) AS duplicate_count
+FROM employee
+GROUP BY first_name
+HAVING COUNT(*) > 1;
+-------------------------------------------------------------------------------------
+1
+SELECT department,
+COUNT(*) AS total_employees
+FROM employee
+GROUP BY department
+HAVING COUNT(*) > 5;
+-------------------------------------------------------------------------------------
+2
+SELECT department, AVG(salary) AS average_salary
+FROM employee
+GROUP BY department
+HAVING AVG(salary) > 50000;
+-------------------------------------------------------------------------------------
+3
+SELECT department, COUNT(*) AS total_employees
+FROM employee
+WHERE salary >= 30000
+GROUP BY department
+HAVING COUNT(*) >= 3;
+-------------------------------------------------------------------------------------
+4
+SELECT department, MAX(salary) AS max_salary
+FROM employee
+GROUP BY department
+HAVING MAX(salary) > 60000;
+-------------------------------------------------------------------------------------
+5
+SELECT department, MAX(salary) AS highest_salary,
+MIN(salary) AS lowest_salary
+FROM employee
+GROUP BY department
+HAVING MAX(salary) >= 2 * MIN(salary);
+-------------------------------------------------------------------------------------
+6
+SELECT department, COUNT(*) AS total_employees,
+SUM(salary) AS total_salary_expense
+FROM employee
+GROUP BY department
+HAVING COUNT(*) >= 5 AND SUM(salary) > 100000;
+-------------------------------------------------------------------------------------
+7
+SELECT department, AVG(salary) AS average_salary
+FROM employee
+GROUP BY department
+HAVING AVG(salary) BETWEEN 20000 AND 50000;
+-------------------------------------------------------------------------------------
+8
+SELECT department, COUNT(*) AS total_employees,
+MAX(salary) - MIN(salary) AS salary_difference
+FROM employee
+GROUP BY department
+HAVING COUNT(*) > 4
+AND (MAX(salary) - MIN(salary)) > 25000;
