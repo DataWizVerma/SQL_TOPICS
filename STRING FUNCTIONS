@@ -1,0 +1,6 @@
+-- Question 1 (Basic):
+-- Write an SQL query to convert all names in a table employees to uppercase. The column for names is name.
+-- What would your query be?
+
+SELECT UPPER(first_name) AS upper_name
+FROM employees;
