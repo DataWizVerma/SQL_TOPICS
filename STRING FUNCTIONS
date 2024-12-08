@@ -4,3 +4,36 @@
 
 SELECT UPPER(first_name) AS upper_name
 FROM employees;
+
+-- ### Question 2 (Basic):  
+-- Write an SQL query to find the length of the names in the `employees` table. The column for names is `name`.
+
+-- How would you write it?
+select first_name ,LENGTH(first_name) as name_length from employees
+
+-- ### Question 3 (Basic):  
+-- Write an SQL query to concatenate the `first_name` and `last_name` columns in the `employees` table with a space between them.  
+
+-- How would you write this query?
+select CONCAT(first_name,' ',last_name) as name from employees
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Table Structure: employee
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    address VARCHAR(100)
+);
+
+INSERT INTO employees (employee_id, first_name, last_name, email, address)
+VALUES
+(1, 'John', 'Doe', 'john.doe@example.com', '  123 Elm Street  '),
+(2, 'Jane', 'Smith', 'jane.smith@example.com', '456 Oak Avenue '),
+(3, 'Emily', 'Davis', 'emily.davis@example.com', '   789 Pine Road'),
+(4, 'Michael', 'Brown', 'michael.brown@example.com', '321 Maple Blvd '),
+(5, 'Sarah', 'Johnson', 'sarah.johnson@example.com', '    654 Cedar Way  ');
+
+
