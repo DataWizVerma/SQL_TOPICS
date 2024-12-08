@@ -36,4 +36,7 @@ VALUES
 (4, 'Michael', 'Brown', 'michael.brown@example.com', '321 Maple Blvd '),
 (5, 'Sarah', 'Johnson', 'sarah.johnson@example.com', '    654 Cedar Way  ');
 
+-- ### Question 6 (Intermediate):
+-- Write an SQL query to replace the word "Street" with "St." in the `address` column of the `employees` table.
+select REPLACE(address,'Street','St.') from employee
 
